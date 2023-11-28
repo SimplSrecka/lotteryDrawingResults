@@ -58,5 +58,5 @@ jobs:
 
       - name: Deploy to AKS
         run: |
-          kubectl set image deployment/lottery-drawing-results-deployment lottery-drawing-results=lb4684/lottery-drawing-results
+          kubectl set image deployment/lottery-drawing-results-deployment lottery-drawing-results=lb4684/lottery-drawing-results:${{ steps.current-time.outputs.formattedTime }}
           kubectl rollout status deployment/lottery-drawing-results-deployment
