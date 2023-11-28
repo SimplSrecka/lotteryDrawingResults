@@ -58,5 +58,5 @@ jobs:
 
       - name: Deploy to AKS
         run: |
-          kubectl set image deployment/lottery-drawing-results lottery-drawing-results-container=lb4684/lottery-drawing-results:latest
+          kubectl set image deployment/lottery-drawing-results lottery-drawing-results=lb4684/lottery-drawing-results:latest
           kubectl rollout status deployment/lottery-drawing-results
