@@ -13,7 +13,7 @@ kumuluzee:
       connection-url: jdbc:postgresql://sqlsimplsrecka.postgres.database.azure.com:5432/lottery-ticket
       username: lukaariana
       password: XonaryLu99
-      #username: dbuser
+      #username: dbuse r
       #password: postgres
   health:
     checks:
