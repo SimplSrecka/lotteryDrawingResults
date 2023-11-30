@@ -38,7 +38,24 @@ public class LotteryDrawingResultsResource {
     @Context
     protected UriInfo uriInfo;
 
-
+    @Operation(description = "Get all lottery drawing results.", summary = "Get all drawing results")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "List of lottery drawing results",
+                    content = @Content(schema = @Schema(implementation = LotteryDrawingResult.class, type = SchemaType.ARRAY)),
+                    headers = {@Header(name = "X-Total-Count", description = "Number of drawing results in list")}
+            )
+            @APIResponse(responseCode = "400", description = "Bad Request - The request could not be understood or was missing required parameters."),
+            @APIResponse(responseCode = "401", description = "Unauthorized - Authentication failed or user doesn't have permissions for requested operation."),
+            @APIResponse(responseCode = "403", description = "Forbidden - Access to the requested resource is denied."),
+            @APIResponse(responseCode = "404", description = "Not Found - The specified resource was not found."),
+            @APIResponse(responseCode = "500", description = "Internal Server Error - Something went wrong on the server side.")
+    })
+    @GET
+    public Response getLotteryDrawingResults() {
+        List<LotteryDrawingResult> drawingResults = lotteryDrawingResultsBean.getLotteryDrawingResults();
+        return Response.status(Response.Status.OK).entity(drawingResults).build();
+    }
 
     @Operation(description = "Get details for a specific lottery drawing result.", summary = "Get drawing result details")
     @APIResponses({
