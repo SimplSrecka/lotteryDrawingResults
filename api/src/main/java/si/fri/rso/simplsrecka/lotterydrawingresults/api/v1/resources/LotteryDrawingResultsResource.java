@@ -44,7 +44,7 @@ public class LotteryDrawingResultsResource {
                     description = "List of lottery drawing results",
                     content = @Content(schema = @Schema(implementation = LotteryDrawingResult.class, type = SchemaType.ARRAY)),
                     headers = {@Header(name = "X-Total-Count", description = "Number of drawing results in list")}
-            )
+            ),
             @APIResponse(responseCode = "400", description = "Bad Request - The request could not be understood or was missing required parameters."),
             @APIResponse(responseCode = "401", description = "Unauthorized - Authentication failed or user doesn't have permissions for requested operation."),
             @APIResponse(responseCode = "403", description = "Forbidden - Access to the requested resource is denied."),
