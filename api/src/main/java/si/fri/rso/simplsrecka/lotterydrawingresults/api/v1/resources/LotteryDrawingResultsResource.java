@@ -38,19 +38,7 @@ public class LotteryDrawingResultsResource {
     @Context
     protected UriInfo uriInfo;
 
-    @Operation(description = "Get all lottery drawing results.", summary = "Get all drawing results")
-    @APIResponses({
-            @APIResponse(responseCode = "200",
-                    description = "List of lottery drawing results",
-                    content = @Content(schema = @Schema(implementation = LotteryDrawingResult.class, type = SchemaType.ARRAY)),
-                    headers = {@Header(name = "X-Total-Count", description = "Number of drawing results in list")}
-            )
-    })
-    @GET
-    public Response getLotteryDrawingResults() {
-        List<LotteryDrawingResult> drawingResults = lotteryDrawingResultsBean.getLotteryDrawingResults();
-        return Response.status(Response.Status.OK).entity(drawingResults).build();
-    }
+
 
     @Operation(description = "Get details for a specific lottery drawing result.", summary = "Get drawing result details")
     @APIResponses({
