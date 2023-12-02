@@ -1,5 +1,5 @@
 kumuluzee:
-  name: lottery-ticket-catalog-service
+  name: lottery-drawing-results-service
   env:
     name: dev
   version: 1.0.0
