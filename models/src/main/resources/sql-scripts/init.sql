@@ -1,1 +1,12 @@
-INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-01-15 20:00:00', '5,12,23,34,45', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-01-15 20:00:00', '3,34,35,43,47', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-02-15 20:00:00', '1,29,22,30,44', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-03-15 20:00:00', '14,18,27,35,40', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-04-15 20:00:00', '9,11,13,31,48', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-05-15 20:00:00', '7,16,24,29,50', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-06-15 20:00:00', '5,13,26,38,49', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-07-15 20:00:00', '8,15,28,37,46', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-08-15 20:00:00', '2,10,21,24,42', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-09-15 20:00:00', '16,17,20,26,33', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-10-15 20:00:00', '12,19,32,39,45', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-11-15 20:00:00', '3,14,25,33,47', 'Regular', 100000.00);
+INSERT INTO lottery_drawing_results (drawing_date, winning_combination, lottery_category, total_prize) VALUES ('2023-12-15 20:00:00', '1,9,22,30,44', 'Regular', 100000.00);
