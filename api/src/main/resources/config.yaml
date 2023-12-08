@@ -27,12 +27,12 @@ kumuluzee:
         url-pattern: /v1/tickets/*
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
-                            <Configuration name="comments">
+                            <Configuration name="SimplSrecka">
                                 <Appenders>
                                     <Console name="console" target="SYSTEM_OUT">
                                         <PatternLayout pattern="%d %p %marker %m %X %ex %n"/>
                                     </Console>
-                                    <Socket name="SimplSrecka" host="4dd8db1a-6ae2-4cfc-81a7-c9d1cf9dda97-ls.logit.io"
+                                    <Socket name="logstash" host="4dd8db1a-6ae2-4cfc-81a7-c9d1cf9dda97-ls.logit.io"
                                     port="32633" protocol="udp">
                                         <JSONLayout complete="false" compact="true" eventEol="true" charset="UTF-8" properties="true"/>
                                     </Socket>
