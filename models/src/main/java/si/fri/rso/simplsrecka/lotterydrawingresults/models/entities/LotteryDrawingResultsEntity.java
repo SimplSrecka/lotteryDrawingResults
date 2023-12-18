@@ -8,7 +8,7 @@ import java.time.Instant;
 @Table(name = "lottery_drawing_results")
 @NamedQueries({
         @NamedQuery(name = "LotteryDrawingResultsEntity.getAll",
-                query = "SELECT l FROM LotteryDrawingResultsEntity l")
+                query = "SELECT l FROM LotteryDrawingResultsEntity l"),
 })
 public class LotteryDrawingResultsEntity {
 

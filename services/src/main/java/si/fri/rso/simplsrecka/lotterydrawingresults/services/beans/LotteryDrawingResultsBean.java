@@ -14,6 +14,7 @@ import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
 
 import org.eclipse.microprofile.metrics.annotation.Gauge;
+import org.eclipse.microprofile.metrics.annotation.Metered;
 import org.eclipse.microprofile.metrics.annotation.Timed;
 
 import si.fri.rso.simplsrecka.lotterydrawingresults.lib.LotteryDrawingResult;
@@ -51,7 +52,7 @@ public class LotteryDrawingResultsBean {
         return LotteryDrawingResultsConverter.toDto(entity);
     }
 
-    @Gauge(name = "create_lottery_drawing_result", unit = "MetricUnits.NONE")
+    @Metered(name = "create_lottery_drawing_result")
     public LotteryDrawingResult createLotteryDrawingResult(LotteryDrawingResult dto) {
         LotteryDrawingResultsEntity entity = LotteryDrawingResultsConverter.toEntity(dto);
         try {
