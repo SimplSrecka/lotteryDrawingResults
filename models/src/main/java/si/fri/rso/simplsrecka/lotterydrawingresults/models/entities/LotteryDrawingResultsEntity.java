@@ -3,12 +3,15 @@ package si.fri.rso.simplsrecka.lotterydrawingresults.models.entities;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "lottery_drawing_results")
 @NamedQueries({
         @NamedQuery(name = "LotteryDrawingResultsEntity.getAll",
                 query = "SELECT l FROM LotteryDrawingResultsEntity l"),
+        @NamedQuery(name = "LotteryDrawingResultsEntity.getTicketByIdAndDate",
+                query = "SELECT l FROM LotteryDrawingResultsEntity l WHERE l.ticketId = :ticketId and l.drawingDate = :drawingDate")
 })
 public class LotteryDrawingResultsEntity {
 
@@ -16,8 +19,11 @@ public class LotteryDrawingResultsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "ticket_id")
+    private Integer ticketId;
+
     @Column(name = "drawing_date")
-    private Instant drawingDate;
+    private LocalDate drawingDate;
 
     @Column(name = "winning_combination")
     private String winningCombination;
@@ -36,11 +42,19 @@ public class LotteryDrawingResultsEntity {
         this.id = id;
     }
 
-    public Instant getDrawingDate() {
+    public Integer getTicketId() {
+        return ticketId;
+    }
+
+    public void setTicketId(Integer ticketId) {
+        this.ticketId = ticketId;
+    }
+
+    public LocalDate getDrawingDate() {
         return drawingDate;
     }
 
-    public void setDrawingDate(Instant drawingDate) {
+    public void setDrawingDate(LocalDate drawingDate) {
         this.drawingDate = drawingDate;
     }
 

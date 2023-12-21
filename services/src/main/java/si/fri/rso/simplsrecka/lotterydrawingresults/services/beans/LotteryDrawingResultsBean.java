@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.UriInfo;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -44,12 +45,14 @@ public class LotteryDrawingResultsBean {
                 .map(LotteryDrawingResultsConverter::toDto).collect(Collectors.toList());
     }
 
-    public LotteryDrawingResult getLotteryDrawingResult(Integer id) {
-        LotteryDrawingResultsEntity entity = em.find(LotteryDrawingResultsEntity.class, id);
-        if (entity == null) {
-            throw new NotFoundException("Drawing Result not found");
-        }
-        return LotteryDrawingResultsConverter.toDto(entity);
+    public List<LotteryDrawingResult> getLotteryDrawingResult(Integer ticketId, String drawingDate) {
+        LocalDate localDateDrawingDate = LocalDate.parse(drawingDate);
+        TypedQuery<LotteryDrawingResultsEntity> query  = em.createNamedQuery("LotteryDrawingResultsEntity.getTicketByIdAndDate", LotteryDrawingResultsEntity.class);
+        query.setParameter("ticketId", ticketId);
+        query.setParameter("drawingDate", localDateDrawingDate);
+        List<LotteryDrawingResultsEntity> resultList = query.getResultList();
+
+        return resultList.stream().map(LotteryDrawingResultsConverter::toDto).collect(Collectors.toList());
     }
 
     @Metered(name = "create_lottery_drawing_result")

@@ -20,7 +20,9 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Log
@@ -66,14 +68,23 @@ public class LotteryDrawingResultsResource {
             @APIResponse(responseCode = "404", description = "Drawing result not found")
     })
     @GET
-    @Path("/{resultId}")
+    @Path("/{ticketId}")
     public Response getLotteryDrawingResult(@Parameter(description = "Drawing Result ID.", required = true)
-                                            @PathParam("resultId") Integer resultId) {
-        LotteryDrawingResult drawingResult = lotteryDrawingResultsBean.getLotteryDrawingResult(resultId);
-        if (drawingResult == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
+                                            @PathParam("ticketId") Integer ticketId,
+                                            @Parameter(description = "Draw Date.")
+                                            @QueryParam("drawingDate") String drawingDate){
+        System.out.println(ticketId + " " + drawingDate);
+        try {
+            List<LotteryDrawingResult> drawingResult = lotteryDrawingResultsBean.getLotteryDrawingResult(ticketId, drawingDate);
+            if (drawingResult.isEmpty()) {
+                return Response.status(Response.Status.NOT_FOUND).entity("No lottery drawing for ticket").build();
+            }
+            return Response.status(Response.Status.OK).entity(drawingResult).build();
+        } catch (Exception e) {
+            log.log(Level.SEVERE, "Error fetching lottery drawings", e);
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        return Response.status(Response.Status.OK).entity(drawingResult).build();
+
     }
 
     @Operation(description = "Add a new lottery drawing result.", summary = "Add drawing result")

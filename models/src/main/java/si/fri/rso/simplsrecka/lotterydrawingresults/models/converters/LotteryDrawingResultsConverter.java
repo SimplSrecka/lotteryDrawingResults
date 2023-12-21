@@ -8,6 +8,7 @@ public class LotteryDrawingResultsConverter {
     public static LotteryDrawingResult toDto(LotteryDrawingResultsEntity entity) {
         LotteryDrawingResult dto = new LotteryDrawingResult();
         dto.setId(entity.getId());
+        dto.setTicketId(entity.getTicketId());
         dto.setDrawingDate(entity.getDrawingDate());
         dto.setWinningCombination(entity.getWinningCombination());
         dto.setLotteryCategory(entity.getLotteryCategory());
@@ -21,6 +22,7 @@ public class LotteryDrawingResultsConverter {
         if (dto.getId() != null) {
             entity.setId(dto.getId());
         }
+        entity.setTicketId(dto.getTicketId());
         entity.setDrawingDate(dto.getDrawingDate());
         entity.setWinningCombination(dto.getWinningCombination());
         entity.setLotteryCategory(dto.getLotteryCategory());

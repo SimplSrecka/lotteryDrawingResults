@@ -2,20 +2,16 @@ package si.fri.rso.simplsrecka.lotterydrawingresults.lib;
 
 import java.time.Instant;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class LotteryDrawingResult {
 
     private Integer id;
-    private Instant drawingDate;
+    private Integer ticketId;
+    private LocalDate drawingDate;
     private String winningCombination;
     private String lotteryCategory;
     private BigDecimal totalPrize;
-    private Integer ticketId;
-    private String name;
-    private String description;
-    private Double price;
-    private Instant created;
-    private Instant drawDate;
 
     public Integer getId() {
         return id;
@@ -25,11 +21,19 @@ public class LotteryDrawingResult {
         this.id = id;
     }
 
-    public Instant getDrawingDate() {
+    public Integer getTicketId() {
+        return ticketId;
+    }
+
+    public void setTicketId(Integer ticketId) {
+        this.ticketId = ticketId;
+    }
+
+    public LocalDate getDrawingDate() {
         return drawingDate;
     }
 
-    public void setDrawingDate(Instant drawingDate) {
+    public void setDrawingDate(LocalDate drawingDate) {
         this.drawingDate = drawingDate;
     }
 
@@ -55,53 +59,5 @@ public class LotteryDrawingResult {
 
     public void setTotalPrize(BigDecimal totalPrize) {
         this.totalPrize = totalPrize;
-    }
-
-    public Integer getTicketId() {
-        return ticketId;
-    }
-
-    public void setTicketId(Integer ticketId) {
-        this.ticketId = ticketId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Instant getCreated() {
-        return created;
-    }
-
-    public void setCreated(Instant created) {
-        this.created = created;
-    }
-
-    public Instant getDrawDate() {
-        return drawDate;
-    }
-
-    public void setDrawDate(Instant drawDate) {
-        this.drawDate = drawDate;
     }
 }
