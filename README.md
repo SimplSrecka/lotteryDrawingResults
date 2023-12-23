@@ -9,6 +9,9 @@
 * Urejanje podatkov izbranega žrebanja
 * Brisanje izbranega žrebanja
 
+### API Swagger:
+* http://52.226.192.46/lottery-drawing-results/api-specs/ui/?url=http://52.226.192.46/lottery-drawing-results/openapi&oauth2RedirectUrl=http://52.226.192.46/lottery-drawing-results/api-specs/ui/oauth2-redirect.html
+
 ### Use Case:
 * Ogled podatkov nazadnjega žrebanja
 
