@@ -4,8 +4,8 @@ kumuluzee:
     name: dev
   version: 1.0.0
   server:
-    #base-url: http://localhost:8083
-    base-url: http://20.124.175.39:8083
+    base-url: http://localhost:8083
+    #base-url: http://20.124.175.39:8083
     http:
       port: 8083
   datasources:
@@ -27,9 +27,7 @@ kumuluzee:
   openapi-mp:
     ui:
       #specification-server: http://localhost:8083
-      specification-server: http://20.124.175.39:8083
-      swagger-ui:
-        path: /lottery-drawing-results/api-specs/ui
+      specification-server: http://52.226.192.46/lottery-drawing-results
   health:
     checks:
       data-source-health-check:
@@ -38,10 +36,10 @@ kumuluzee:
       disk-space-health-check:
         threshold: 100000000
         type: liveness
-  #metrics:
-  #  web-instrumentation:
-  #    - name: tickets-endpoint
-  #      url-pattern: /v1/tickets/*
+  metrics:
+    web-instrumentation:
+      - name: tickets-endpoint
+        url-pattern: /v1/tickets/*
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                             <Configuration name="SimplSrecka">
